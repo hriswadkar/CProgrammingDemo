@@ -1,10 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 struct Node {
     int data;
     struct Node *next;
 };
+
+void printList(struct Node *n) {
+    while(n != NULL) {
+        printf("%d", n->data);
+        n = n->next;
+    }
+}
 
 int main() {
     struct Node* head = NULL;
@@ -24,9 +32,13 @@ int main() {
     third->data = 3;
     third->next = NULL;
 
-    printf("%d\n", head->data);
+    /*printf("%d\n", head->data);
     printf("%d\n", second->data);
-    printf("%d\n", third->data);
+    printf("%d\n", third->data);*/
+
+    printList(head);
 
     return 0;
 }
+
+
